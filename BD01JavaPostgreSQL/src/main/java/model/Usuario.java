@@ -1,23 +1,23 @@
+package com.ti2cc;
 
-
-public class usuario {
+public class Filmes {
     private int codigo;//codigo que identifica o filme como unico
     private String genero;//terror, acao, suspense, comedia
     private String nome;//inception, barbie, oppenheimer
-   
+    private String duracao;//60mins, 190mins, 150mins
 
     public Filmes() {
         this.codigo = -1;
         this.genero = "";
         this.nome = "";
-      
+        this.duracao = "";
     }
 
     public Filmes(int codigo, String genero, String nome, String duracao) {
         this.codigo = codigo;
         this.genero = genero;
         this.nome = nome;
-        
+        this.duracao = duracao;
     }
 
     public int getCodigo() {
@@ -44,6 +44,13 @@ public class usuario {
         this.nome = nome;
     }
 
+    public String getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(String duracao) {
+        this.duracao = duracao;
+    }
 
     @Override
     public String toString() {
