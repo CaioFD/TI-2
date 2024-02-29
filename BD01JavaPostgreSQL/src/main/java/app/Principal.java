@@ -1,48 +1,47 @@
-package com.ti2cc;
+package app;
 
 public class Principal {
-	
-	public static void main(String[] args) {
-		
-		DAO dao = new DAO();
-		
-		dao.conectar();
 
-		
-		// Inserir um elemento na tabela
-		Filmes filme = new Filmes(89, "terror", "Midsommar", "147mins");
-		if (dao.inserirFilme(filme)) {
-			System.out.println("Inserção com sucesso -> " + filme.toString());
-		}
-		
-		// Mostrar filmes
-		System.out.println("==== Mostrar filmes === ");
-		Filmes[] filmes = dao.getFilmes();
-		for (int i = 0; i < filmes.length; i++) {
-			System.out.println(filmes[i].toString());
-		}
+    public static void main(String[] args) {
 
-		// Atualizar o filme
-		filme.setNome("Inception");
-		dao.atualizarFilme(filme);
+        DAO dao = new DAO();
 
-		// Mostrar os filmes
-		System.out.println("==== Mostrar filmes === ");
-		filmes = dao.getFilmes();
-		for (int i = 0; i < filmes.length; i++) {
-			System.out.println(filmes[i].toString());
-		}
-		
-		// Excluir o filme
-		dao.excluirFilme(filme.getCodigo());
-		
-		// Mostrar os filmes
-		filmes = dao.getFilmes();
-		System.out.println("==== Mostrar filmes === ");		
-		for (int i = 0; i < filmes.length; i++) {
-			System.out.println(filmes[i].toString());
-		}
-		
-		dao.close();
-	}
+        dao.conectar();
+
+        // Inserir uma série na tabela
+        Series serie = new Series(89, "terror", "Midsommar", "45mins/episódio");
+        if (dao.inserirSerie(serie)) {
+            System.out.println("Inserção com sucesso -> " + serie.toString());
+        }
+
+        // Mostrar séries
+        System.out.println("==== Mostrar séries === ");
+        Series[] series = dao.getSeries();
+        for (int i = 0; i < series.length; i++) {
+            System.out.println(series[i].toString());
+        }
+
+        // Atualizar a série
+        serie.setTitulo("Inception");
+        dao.atualizarSerie(serie);
+
+        // Mostrar as séries
+        System.out.println("==== Mostrar séries === ");
+        series = dao.getSeries();
+        for (int i = 0; i < series.length; i++) {
+            System.out.println(series[i].toString());
+        }
+
+        // Excluir a série
+        dao.excluirSerie(serie.getCodigo());
+
+        // Mostrar as séries
+        series = dao.getSeries();
+        System.out.println("==== Mostrar séries === ");
+        for (int i = 0; i < series.length; i++) {
+            System.out.println(series[i].toString());
+        }
+
+        dao.close();
+    }
 }

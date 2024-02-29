@@ -1,23 +1,23 @@
-package com.ti2cc;
+package model;
 
-public class Filmes {
-    private int codigo;//codigo que identifica o filme como unico
-    private String genero;//terror, acao, suspense, comedia
-    private String nome;//inception, barbie, oppenheimer
-    private String duracao;//60mins, 190mins, 150mins
+public class Series {
+    private int codigo;
+    private String genero;
+    private String titulo;
+    private String duracaoEpisodio;
 
-    public Filmes() {
+    public Series() {
         this.codigo = -1;
         this.genero = "";
-        this.nome = "";
-        this.duracao = "";
+        this.titulo = "";
+        this.duracaoEpisodio = "";
     }
 
-    public Filmes(int codigo, String genero, String nome, String duracao) {
+    public Series(int codigo, String genero, String titulo, String duracaoEpisodio) {
         this.codigo = codigo;
         this.genero = genero;
-        this.nome = nome;
-        this.duracao = duracao;
+        this.titulo = titulo;
+        this.duracaoEpisodio = duracaoEpisodio;
     }
 
     public int getCodigo() {
@@ -36,24 +36,24 @@ public class Filmes {
         this.genero = genero;
     }
 
-    public String getNome() {
-        return nome;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDuracao() {
-        return duracao;
+    public String getDuracaoEpisodio() {
+        return duracaoEpisodio;
     }
 
-    public void setDuracao(String duracao) {
-        this.duracao = duracao;
+    public void setDuracaoEpisodio(String duracaoEpisodio) {
+        this.duracaoEpisodio = duracaoEpisodio;
     }
 
     @Override
     public String toString() {
-        return "Filmes [codigo=" + codigo + ", genero=" + genero + ", nome=" + nome + ", duracao=" + duracao + "]";
+        return "Series [codigo=" + codigo + ", genero=" + genero + ", titulo=" + titulo + ", duracaoEpisodio=" + duracaoEpisodio + "]";
     }
 }
