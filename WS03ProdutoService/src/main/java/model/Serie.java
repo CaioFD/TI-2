@@ -2,22 +2,22 @@ package model;
 
 public class Serie {
     private int codigo;
-    private String genero;
     private String titulo;
-    private String duracaoEpisodio;
+    private String descricao;
+    private String genero;
 
     public Serie() {
         this.codigo = -1;
-        this.genero = "";
         this.titulo = "";
-        this.duracaoEpisodio = "";
+        this.descricao = "";
+        this.genero = "";
     }
 
-    public Serie(int codigo, String genero, String titulo, String duracaoEpisodio) {
+    public Serie(int codigo, String titulo, String descricao, String genero) {
         this.codigo = codigo;
-        this.genero = genero;
         this.titulo = titulo;
-        this.duracaoEpisodio = duracaoEpisodio;
+        this.descricao = descricao;
+        this.genero = genero;
     }
 
     public int getCodigo() {
@@ -44,16 +44,16 @@ public class Serie {
         this.titulo = titulo;
     }
 
-    public String getDuracaoEpisodio() {
-        return duracaoEpisodio;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDuracaoEpisodio(String duracaoEpisodio) {
-        this.duracaoEpisodio = duracaoEpisodio;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
     public String toString() {
-        return "Series [codigo=" + codigo + ", genero=" + genero + ", titulo=" + titulo + ", duracaoEpisodio=" + duracaoEpisodio + "]";
+        return "Series [codigo=" + codigo + " , titulo=" + titulo + ", descricao=" + descricao + "genero=" + genero +"]";
     }
 }
